@@ -1,0 +1,13 @@
+ @import "tailwindcss";
+
+ body{
+  /* background-image: url(./images/EM\ Service.png); */
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 100vh;
+  background-color: rgb(12, 9, 26);
+   
+ }
+ 
+ 
