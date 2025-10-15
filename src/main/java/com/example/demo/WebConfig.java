@@ -12,7 +12,7 @@ public class WebConfig implements WebMvcConfigurer {
     public void addCorsMappings(@NonNull CorsRegistry registry) {
         // Allow requests from any localhost port during development (vite may pick 5173/5174/5175...)
         registry.addMapping("/**")
-                .allowedOriginPatterns("http://localhost:*")
+                .allowedOriginPatterns("*")
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
                 .allowedHeaders("*")
                 .allowCredentials(true);
