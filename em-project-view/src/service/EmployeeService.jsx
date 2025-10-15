@@ -3,7 +3,7 @@ import axios from "axios";
 // Use Vite env var so production builds can point to the deployed backend.
 // Set VITE_API_BASE_URL in Vercel to e.g. "https://my-backend.example.com/employees"
 const EMPLOYEE_S_API_BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:8080/employees";
-const EMPLOYEE_API = `${BASE_API}/employees`;
+ 
 
 class EmployeeService {
    saveEmployee(employee) {
