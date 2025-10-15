@@ -14,7 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 
-@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174"})
+@CrossOrigin(origins = {"http://localhost:5173", "http://localhost:5174","https://em-service.vercel.app"})
+
 @RestController
 public class Empcontroller {
 
