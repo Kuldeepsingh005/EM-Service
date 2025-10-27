@@ -1,16 +1,28 @@
-import React from 'react'
+import React from 'react';
+import { NavLink } from 'react-router-dom';
 
-const Navbar = () => {
+const Navbar = ({ loggedIn }) => {
   return (
-     <div className="bg-slate-800 h-12 px-10 item-center flex">
-      <h1 className="text-3xl font-bold text-red-500">🧑‍💻EM Service</h1>
-      <div className="space-x-4 ml-auto text-white item-center flex">
-        <a className="hover:text-blue-400"  href="/">Home</a>
-        <a className="hover:text-blue-400"href="/profile">Profile</a>
-        <a className="hover:text-blue-400"href="/logout">LogOut</a>
+    <nav className="bg-gray-800 shadow-md">
+      <div className="container mx-auto px-6 py-3">
+        <div className="flex items-center justify-between">
+          <div>
+            <NavLink className="text-white text-2xl font-bold" to="/">EM Service</NavLink>
+          </div>
+          <div className="flex items-center space-x-4">
+            <NavLink className="px-3 py-2 text-gray-300 rounded hover:bg-gray-700 hover:text-white transition-colors duration-300" to="/">Home</NavLink>
+            <NavLink className="px-3 py-2 text-gray-300 rounded hover:bg-gray-700 hover:text-white transition-colors duration-300" to="/about">About</NavLink> {/* Add About link */}
+            {loggedIn && <NavLink className="px-3 py-2 text-gray-300 rounded hover:bg-gray-700 hover:text-white transition-colors duration-300" to="/profile">Profile</NavLink>}
+            {loggedIn ? (
+              <NavLink className="px-3 py-2 text-gray-300 rounded hover:bg-gray-700 hover:text-white transition-colors duration-300" to="/logout">Logout</NavLink>
+            ) : (
+              <NavLink className="px-3 py-2 text-gray-300 rounded hover:bg-gray-700 hover:text-white transition-colors duration-300" to="/login">Login</NavLink>
+            )}
+          </div>
+        </div>
       </div>
-     </div>
-  )
-}
+    </nav>
+  );
+};
 
-export default Navbar
+export default Navbar;
